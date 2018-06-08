@@ -89,31 +89,17 @@ function listFunctions(prim) {
   return prim.listFunctions();
 }
 
-function Queries_003(prim, prim$1) {
+function count(prim, prim$1) {
   return prim.count(prim$1);
 }
 
-function Queries_004(prim, prim$1, prim$2) {
+function where(prim, prim$1, prim$2) {
   return prim.where(prim$1, prim$2);
 }
 
-function Queries_005(prim, prim$1, prim$2) {
+function whereObj(prim, prim$1, prim$2) {
   return prim.where(prim$1, prim$2);
 }
-
-var Queries = [
-  find,
-  findOne,
-  findOneId,
-  Queries_003,
-  Queries_004,
-  Queries_005,
-  save,
-  insert,
-  update,
-  updateId,
-  updateString
-];
 
 exports.create = create;
 exports.reload = reload;
@@ -121,5 +107,15 @@ exports.listTables = listTables;
 exports.listViews = listViews;
 exports.listFunctions = listFunctions;
 exports.table = table$1;
-exports.Queries = Queries;
+exports.find = find;
+exports.findOne = findOne;
+exports.findOneId = findOneId;
+exports.count = count;
+exports.where = where;
+exports.whereObj = whereObj;
+exports.save = save;
+exports.insert = insert;
+exports.update = update;
+exports.updateId = updateId;
+exports.updateString = updateString;
 /* massive Not a pure module */
