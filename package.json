@@ -1,0 +1,37 @@
+{
+  "name": "bs-massive",
+  "version": "1.1.0",
+  "description": "Bindings to the massive npm module for bucklescript applications",
+  "main": "lib/js/src/massive.js",
+  "scripts": {
+    "build": "bsb -make-world",
+    "watch": "bsb -make-world -w",
+    "clean": "bsb -clean-world"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lidcore/bs-massive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lidcore/bs-massive/issues"
+  },
+  "keywords": [
+    "bucklescript",
+    "asynchronous",
+    "massive",
+    "monad"
+  ],
+  "dependencies": {
+    "bs-async-monad": "^1.0.0",
+    "massive": "^5.0.0"
+  },
+  "peerDependencies": {
+    "bs-platform": "^3.1.5"
+  },
+  "devDependencies": {
+    "bs-platform": "^3.1.5"
+  },
+  "author": "Lidcore IT <it@lidcore.com>",
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/lidcore/bs-massive"
+}
