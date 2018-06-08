@@ -10,8 +10,6 @@
   "bsc-flags": [
     "-bs-super-errors"
   ],
-  "bs-dependencies" : [
-    "bs-async-monad"
-  ],
+  "bs-dependencies" : [],
   "refmt": 3,
 }

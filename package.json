@@ -22,7 +22,6 @@
     "monad"
   ],
   "dependencies": {
-    "bs-async-monad": "^1.0.0",
     "massive": "^5.0.0"
   },
   "peerDependencies": {
