@@ -25,7 +25,7 @@ function create(user, password, ssl, poolSize, host, port, database) {
   return Massive(tmp);
 }
 
-var table = function (db,name){db[name]};
+var table = function (db,name){return db[name];};
 
 function table$1(db, name) {
   return Js_primitive.null_undefined_to_opt(table(db, name));

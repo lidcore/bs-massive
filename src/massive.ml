@@ -24,7 +24,7 @@ external listViews : t -> string array = "" [@@bs.send]
 external listFunctions : t -> string array = "" [@@bs.send]
 
 let table : t -> string -> table Js.Nullable.t = [%bs.raw fun db name ->
-"db[name]"
+  "return db[name];"
 ]
 
 let table db name =
