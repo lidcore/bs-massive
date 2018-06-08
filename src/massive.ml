@@ -64,4 +64,49 @@ module Queries = struct
 
   external where    : table -> string -> float array -> 'a Js.t array Js.Promise.t = "" [@@bs.send]
   external whereObj : table -> string -> 'a Js.t -> 'b Js.t array Js.Promise.t = "where" [@@bs.send]
+
+  external save : table -> 'a Js.t -> 'b Js.t -> 'c Js.t Js.Promise.t = "" [@@bs.send]
+  let save ?options table data =
+    let options =
+      match options with
+        | Some options -> options
+        | None -> Obj.magic empty
+    in
+    save table data options
+
+  external insert : table -> 'a Js.t -> 'b Js.t -> 'c Js.t Js.Promise.t = "" [@@bs.send]
+  let insert ?options table data =
+    let options =
+      match options with
+        | Some options -> options
+        | None -> Obj.magic empty
+    in
+    insert table data options
+
+  external update : table -> 'a Js.t -> 'b Js.t -> 'c Js.t -> 'd Js.t array Js.Promise.t = "" [@@bs.send]
+  let update ?options table ~criteria changes =
+    let options =
+      match options with
+        | Some options -> options
+        | None -> Obj.magic empty
+    in
+    update table criteria changes options
+
+  external updateId : table -> float -> 'b Js.t -> 'c Js.t -> 'd Js.t Js.Promise.t = "update" [@@bs.send]
+  let updateId ?options table id changes =
+    let options =
+      match options with
+        | Some options -> options
+        | None -> Obj.magic empty
+    in
+    updateId table id changes options
+
+  external updateString : table -> string -> 'b Js.t -> 'c Js.t -> 'd Js.t Js.Promise.t = "update" [@@bs.send]
+  let updateString ?options table id changes =
+    let options =
+      match options with
+        | Some options -> options
+        | None -> Obj.magic empty
+    in
+    updateString table id changes options
 end

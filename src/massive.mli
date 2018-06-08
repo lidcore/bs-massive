@@ -20,4 +20,10 @@ module Queries : sig
   val count     : table -> 'a Js.t -> float Js.Promise.t
   val where     : table -> string -> float array -> 'a Js.t array Js.Promise.t
   val whereObj  : table -> string -> 'a Js.t -> 'b Js.t array Js.Promise.t
+
+  val save         : ?options:'a Js.t -> table -> 'b Js.t -> 'c Js.t Js.Promise.t
+  val insert       : ?options:'a Js.t -> table -> 'b Js.t -> 'c Js.t Js.Promise.t 
+  val update       : ?options:'a Js.t -> table -> criteria:'b Js.t -> 'c Js.t -> 'd Js.t array Js.Promise.t
+  val updateId     : ?options:'a Js.t -> table -> float -> 'c Js.t -> 'd Js.t Js.Promise.t 
+  val updateString : ?options:'a Js.t -> table -> string -> 'c Js.t -> 'd Js.t Js.Promise.t 
 end

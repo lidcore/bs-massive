@@ -48,6 +48,31 @@ function findOneId(options, table, id) {
   return table.findOne(id, options$1);
 }
 
+function save(options, table, data) {
+  var options$1 = options ? options[0] : empty;
+  return table.save(data, options$1);
+}
+
+function insert(options, table, data) {
+  var options$1 = options ? options[0] : empty;
+  return table.insert(data, options$1);
+}
+
+function update(options, table, criteria, changes) {
+  var options$1 = options ? options[0] : empty;
+  return table.update(criteria, changes, options$1);
+}
+
+function updateId(options, table, id, changes) {
+  var options$1 = options ? options[0] : empty;
+  return table.update(id, changes, options$1);
+}
+
+function updateString(options, table, id, changes) {
+  var options$1 = options ? options[0] : empty;
+  return table.update(id, changes, options$1);
+}
+
 function reload(prim) {
   return prim.reload();
 }
@@ -82,7 +107,12 @@ var Queries = [
   findOneId,
   Queries_003,
   Queries_004,
-  Queries_005
+  Queries_005,
+  save,
+  insert,
+  update,
+  updateId,
+  updateString
 ];
 
 exports.create = create;
