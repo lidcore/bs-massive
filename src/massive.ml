@@ -64,6 +64,6 @@ module Queries = struct
 
   external count : table -> 'a Js.t -> float promise = "" [@@bs.send]
 
-  external where    : table -> string -> int array -> 'a Js.t array promise = "" [@@bs.send]
+  external where    : table -> string -> float array -> 'a Js.t array promise = "" [@@bs.send]
   external whereObj : table -> string -> 'a Js.t -> 'b Js.t array promise = "where" [@@bs.send]
 end

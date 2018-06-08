@@ -20,6 +20,6 @@ module Queries : sig
   val findOne   : ?options:'a Js.t -> table -> 'b Js.t -> 'c Js.t promise
   val findOneId : ?options:'a Js.t -> table -> float -> 'b Js.t promise
   val count     : table -> 'a Js.t -> float promise
-  val where     : table -> string -> int array -> 'a Js.t array promise
+  val where     : table -> string -> float array -> 'a Js.t array promise
   val whereObj  : table -> string -> 'a Js.t -> 'b Js.t array promise
 end
