@@ -31,45 +31,43 @@ function table$1(db, name) {
   return Js_primitive.null_undefined_to_opt(table(db, name));
 }
 
-var empty = { };
-
 function find(options, table, criteria) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.find(criteria, options$1);
 }
 
 function findOne(options, table, criteria) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.findOne(criteria, options$1);
 }
 
 function findOneId(options, table, id) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.findOne(id, options$1);
 }
 
 function save(options, table, data) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.save(data, options$1);
 }
 
 function insert(options, table, data) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.insert(data, options$1);
 }
 
 function update(options, table, criteria, changes) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.update(criteria, changes, options$1);
 }
 
 function updateId(options, table, id, changes) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.update(id, changes, options$1);
 }
 
 function updateString(options, table, id, changes) {
-  var options$1 = options ? options[0] : empty;
+  var options$1 = options ? options[0] : { };
   return table.update(id, changes, options$1);
 }
 

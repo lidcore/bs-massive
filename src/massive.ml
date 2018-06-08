@@ -30,14 +30,12 @@ let table : t -> string -> table Js.Nullable.t = [%bs.raw fun db name ->
 let table db name =
 Js.toOption (table db name)
 
-let empty = Js.Dict.empty ()
-
 external find : table -> 'a Js.t -> 'b Js.t -> 'c Js.t array Js.Promise.t = "" [@@bs.send]
 let find ?options table criteria =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   find table criteria options 
 
@@ -46,7 +44,7 @@ let findOne ?options table criteria =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   findOne table criteria options
 
@@ -55,7 +53,7 @@ let findOneId ?options table id =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   findOneId table id options
 
@@ -69,7 +67,7 @@ let save ?options table data =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   save table data options
 
@@ -78,7 +76,7 @@ let insert ?options table data =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   insert table data options
 
@@ -87,7 +85,7 @@ let update ?options table ~criteria changes =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   update table criteria changes options
 
@@ -96,7 +94,7 @@ let updateId ?options table id changes =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   updateId table id changes options
 
@@ -105,6 +103,6 @@ let updateString ?options table id changes =
   let options =
     match options with
       | Some options -> options
-      | None -> Obj.magic empty
+      | None -> Obj.magic (Js.Dict.empty ())
   in
   updateString table id changes options
