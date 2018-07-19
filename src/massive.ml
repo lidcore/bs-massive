@@ -14,6 +14,8 @@ type table
 
 external create : connection -> t Js.Promise.t = "massive" [@@bs.module]
 
+external createFromString : string -> t Js.Promise.t = "massive" [@@bs.module]
+
 let create ?user ?password ?ssl ?poolSize ~host ~port database =
   create (connection ?user ?password ?ssl ?poolSize ~host ~port ~database ())
 
@@ -37,7 +39,7 @@ let find ?options table criteria =
       | Some options -> options
       | None -> Obj.magic (Js.Dict.empty ())
   in
-  find table criteria options 
+  find table criteria options
 
 external findOne : table -> 'a Js.t -> 'b Js.t -> 'c Js.t Js.Promise.t = "" [@@bs.send]
 let findOne ?options table criteria =

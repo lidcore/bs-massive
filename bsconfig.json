@@ -1,15 +1,14 @@
 {
-  "name": "bs-dynamodb",
+  "name": "bs-massive",
+  "namespace": true,
   "sources": [
-    "src"
+    "src",
+    {
+      "dir": "examples",
+      "public": []
+    }
   ],
-  "package-specs": {
-    "module": "commonjs",
-    "in-source": true
-  },
-  "bsc-flags": [
-    "-bs-super-errors"
-  ],
-  "bs-dependencies" : [],
-  "refmt": 3,
+  "bsc-flags": ["-bs-super-errors"],
+  "bs-dependencies": [],
+  "refmt": 3
 }
